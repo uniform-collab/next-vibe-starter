@@ -13,13 +13,23 @@ type HeroProps = ComponentProps<{
 
 const Hero: React.FC<HeroProps> = () => (
   <div>
-    <UniformText
-      className="m-0 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-center text-neutral-900 [&>a]:text-neutral-700 [&>a]:no-underline hover:[&>a]:underline"
-      parameterId="title"
-      as="h1"
+    <div
+      className="relative overflow-hidden w-full py-4"
       data-test-id="hero-title"
-      placeholder="Hero title goes here"
-    />
+    >
+      <div className="flex animate-marquee whitespace-nowrap">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <UniformText
+            key={i}
+            className="mx-8 m-0 text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-neutral-900 shrink-0"
+            parameterId="title"
+            as="h1"
+            aria-hidden={i > 0 ? true : undefined}
+            placeholder="Hero title goes here"
+          />
+        ))}
+      </div>
+    </div>
     <UniformRichText
       parameterId="description"
       className="my-4 text-xl sm:text-2xl leading-normal text-center"
