@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RichTextParamValue } from "@uniformdev/canvas";
+import { AssetParamValue, RichTextParamValue } from "@uniformdev/canvas";
 import { UniformRichText } from "@uniformdev/canvas-next";
 import {
   registerUniformComponent,
@@ -7,22 +7,15 @@ import {
   UniformText,
 } from "@uniformdev/canvas-react";
 
-type ImageValue = {
-  src?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-};
-
 type HeroProps = ComponentProps<{
   title: string;
   description?: RichTextParamValue;
-  image?: ImageValue | ImageValue[];
+  image?: AssetParamValue;
 }>;
 
 const Hero: React.FC<HeroProps> = ({ image }) => {
-  const img = Array.isArray(image) ? image[0] : image;
-  const imgSrc = img?.src;
+  const firstImage = Array.isArray(image) ? image[0] : image;
+  const imgSrc = firstImage?.fields?.url?.value;
 
   return (
     <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ image }) => {
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-neutral-200">
               <Image
                 src={imgSrc}
-                alt={img?.alt || "Hero image"}
+                alt={firstImage?.fields?.title?.value || "Hero image"}
                 fill
                 className="object-cover"
                 priority

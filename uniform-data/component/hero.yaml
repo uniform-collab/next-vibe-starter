@@ -43,10 +43,12 @@ parameters:
     localizable: true
   - id: image
     name: Image
-    type: image
+    type: asset
     helpText: 'Hero image displayed alongside the title and description'
     typeConfig:
       required: false
+      allowedTypes:
+        - image
     localizable: true
 useTeamPermissions: true
 slots: []
