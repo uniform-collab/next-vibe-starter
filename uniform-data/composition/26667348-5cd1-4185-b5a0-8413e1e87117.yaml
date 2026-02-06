@@ -19,6 +19,11 @@ composition:
                 title:
                   type: text
                   value: Personalized hero
+                image:
+                  type: image
+                  value:
+                    - src: /images/hero-visual.jpg
+                      alt: Uniform composable content platform
                 $pzCrit:
                   type: $pzCrit
                   value:
@@ -180,6 +185,11 @@ composition:
                 title:
                   type: text
                   value: Hello world!
+                image:
+                  type: image
+                  value:
+                    - src: /images/hero-visual.jpg
+                      alt: Uniform composable content platform
                 description:
                   type: richText
                   value:

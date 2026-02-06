@@ -15,6 +15,11 @@ composition:
           title:
             type: text
             value: About Us
+          image:
+            type: image
+            value:
+              - src: /images/hero-visual.jpg
+                alt: Uniform composable content platform
           description:
             type: richText
             value:

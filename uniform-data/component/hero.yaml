@@ -41,6 +41,13 @@ parameters:
           - superscript
           - subscript
     localizable: true
+  - id: image
+    name: Image
+    type: image
+    helpText: 'Hero image displayed alongside the title and description'
+    typeConfig:
+      required: false
+    localizable: true
 useTeamPermissions: true
 slots: []
 titleParameter: title

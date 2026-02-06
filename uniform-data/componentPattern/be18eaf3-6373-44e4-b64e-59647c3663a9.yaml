@@ -6,6 +6,11 @@ composition:
     title:
       type: text
       value: Super Hero
+    image:
+      type: image
+      value:
+        - src: /images/hero-visual.jpg
+          alt: Uniform composable content platform
     description:
       type: richText
       value:
