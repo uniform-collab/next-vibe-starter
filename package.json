@@ -3,7 +3,7 @@
   "version": "20.49.2",
   "private": true,
   "scripts": {
-    "dev": "run-s uniform:manifest next:dev",
+    "dev": "run-s next:dev",
     "start": "next start",
     "next:dev": "next dev",
     "build": "run-s uniform:manifest next:build",
